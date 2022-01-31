@@ -1,3 +1,4 @@
+import os
 
 class config:
   '''
@@ -26,3 +27,8 @@ class DevConfig(config):
   '''
 
   Debug = True
+
+  config_options ={
+    'development': DevConfig,
+    'production': ProdConfig,
+  }
