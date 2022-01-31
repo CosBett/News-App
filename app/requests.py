@@ -39,6 +39,7 @@ def get_sources():
          source_results = process_source_results(source_results_list)
 
          return source_results
+
 def  process_source_results(source_list):
   ''' 
   Function to proccess the source  results and tranform to a list of Objects
@@ -63,7 +64,7 @@ def  process_source_results(source_list):
     source_results.append(source_object) 
 
 
-def get_articles(source) :
+def get_topHeadlines(source):
   get_topHeadlines_url = headlines_url.format(source, api_key)
 
   with urllib.request.urlopen(get_topHeadlines_url) as url :
@@ -80,7 +81,8 @@ def get_articles(source) :
 
 def process_topHeadlines_results(topHeadlines_results_list) :
   '''
-  process Top_headlines results and transform them to a list of objects
+  process Top 
+  headlines results and transform them to a list of objects
   '''
   topHeadlines_results = []
   for topHeadlines_item in topHeadlines_results_list :
@@ -97,3 +99,41 @@ def process_topHeadlines_results(topHeadlines_results_list) :
     topHeadlines_results.append(topHeadlines_object)
 
   return topHeadlines_results
+
+def get_articles(source):
+  '''
+  get the json response to our url request for all the articles
+  '''
+  get_articles_url = articles_url.format(api_key)
+
+  with urllib.request.urlopen(get_articles_url) as url :
+    get_articles_data = url.read()
+    get_articles_response = json.loads(get_articles_data)
+
+    articles_results =  None 
+
+    if get_articles_response['articles'] :
+      articles_results_list = get_articles_response['articles']
+      articles_results = process_articles_results(articles_results_list)
+
+  return articles_results 
+
+def process_articles_results(articles_results_list) :
+  '''
+  process all articles result and transform them to a list of objects
+  '''
+  articles_results = []
+  for articles_item in articles_results_list :
+
+    author = articles_item.get('author')
+    title = articles_item.get('title')
+    description = articles_item.get('description')
+    url =articles_item.get('url')
+    urlToImage = articles_item.get('urlToImage')
+    publishedAt = articles_item.get('publishedAt')
+    content = articles_item.get('content')
+
+    articles_object = Articles(author, title, description, url, urlToImage, publishedAt, content)
+    articles_results.append(articles_object)
+
+  return articles_results 
