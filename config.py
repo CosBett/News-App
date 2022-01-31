@@ -18,4 +18,8 @@ class ProdConfig(config):
 class DevConfig(config):
   '''
   Development configuration child class
+  args: 
+        config: Theparent configuration with general configuration settings
   '''
+
+  Debug = True
