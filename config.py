@@ -1,5 +1,3 @@
-from msilib.schema import Class
-
 
 class config:
   '''
