@@ -2,7 +2,7 @@ from nis import cat
 from turtle import title
 from unicodedata import category
 import urllib.request, json
-from .models import Articles, Source
+from .models import Articles, Source, TopHeadlines 
 
 # Obtaining API key
 api_key = None
@@ -61,3 +61,39 @@ def  process_source_results(source_list):
 
     source_object = Source(id, name, description, url, category, language, country)
     source_results.append(source_object) 
+
+
+def get_articles(source) :
+  get_topHeadlines_url = headlines_url.format(source, api_key)
+
+  with urllib.request.urlopen(get_topHeadlines_url) as url :
+    topHeadlines_data = url.read()
+    topHeadlines_response = json.loads(topHeadlines_data)
+
+    topHeadlines_results = None 
+
+    if topHeadlines_response['articles'] :
+      topHeadlines_results_list = topHeadlines_response['articles']
+      topHeadlines_results = process_topHeadlines_results(topHeadlines_results_list)
+
+  return(topHeadlines_results)
+
+def process_topHeadlines_results(topHeadlines_results_list) :
+  '''
+  process Top_headlines results and transform them to a list of objects
+  '''
+  topHeadlines_results = []
+  for topHeadlines_item in topHeadlines_results_list :
+
+    author = topHeadlines_item.get('author')
+    title = topHeadlines_item.get('title')
+    description = topHeadlines_item.get('description')
+    url = topHeadlines_item.get('url')
+    urlToImage = topHeadlines_item.get('urlToImage')
+    publishedAt = topHeadlines_item.get('publishedAt')
+    content = topHeadlines_item.get('content')
+
+    topHeadlines_object = TopHeadlines(author, title, description, url, urlToImage, publishedAt, content)
+    topHeadlines_results.append(topHeadlines_object)
+
+  return topHeadlines_results
