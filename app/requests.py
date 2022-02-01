@@ -14,14 +14,14 @@ base_url = None
 headlines_url = None
 
 # Obtaining everything url
-everything_url = None
+articles_url = None
 
 def configure_request(app):
-  global api_key, base_url, headlines_url, everything_url
+  global api_key, base_url, headlines_url, articles_url
   api_key = app. config['NEWS_HIGHLIGHT_API_KEY']
   base_url = app.config['NEWS_HIGHLIGHT_API_BASE_URL']
   headlines_url = app.config['NEWS_HEADLINES_URL']
-  everything_url = app.config['NEWS_EVERYTHING_URL']
+  articles_url = app.config['NEWS_EVERYTHING_URL']
 
 def get_sources():
   '''

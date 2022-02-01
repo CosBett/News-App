@@ -1,7 +1,7 @@
 from flask import render_template,request,redirect, url_for
 import app
 from . import main
-from ..requests import get_sources
+from ..requests import get_articles, get_sources,get_topHeadlines
 
 
 @app.route('/')
@@ -12,7 +12,10 @@ def index():
     '''
     #  Obtaining News sources
     news_sources = get_sources()
+    articles = get_articles()
+    topHeadlines = get_topHeadlines()
     print(news_sources)
 
+
     title = 'Home - Welcome to Worldwide News Website'
-    return render_template('index.html', title = title, sources = news_sources)
+    return render_template('index.html', title = title, news_sources = news_sources, articles = articles, topHeadlines = topHeadlines)

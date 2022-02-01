@@ -15,20 +15,20 @@ class ProdConfig(config):
   '''
   Production configuration child class
   args:
-       Config: the parent configuration class with General configuration setings
+       Config: the parent configuration class with General configuration settings
   '''
-  pass
+
 
 class DevConfig(config):
   '''
   Development configuration child class
   args: 
-        config: Theparent configuration with general configuration settings
+        config: the parent configuration class with General configuration settings
   '''
 
   Debug = True
 
-  config_options ={
+  config_options = {
     'development': DevConfig,
     'production': ProdConfig,
   }
