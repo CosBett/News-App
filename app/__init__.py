@@ -1,8 +1,9 @@
 from flask import Flask
-from config import config_options
 from flask_bootstrap5 import Bootstrap
+from config import config_options
 from .main import main as main_blueprint
 from .requests import configure_request
+
 
 bootstrap = Bootstrap()
 
@@ -14,10 +15,7 @@ def create_app(config_name):
 
 # Setting up configuration
 
-  # # app.config.from_object(DevConfig)
-  # app.config.from_pyfile('config.py')
-
-  #Initializing flask extensions
+#Initializing flask extensions
   bootstrap.init_app(app)
 
 #registering the blueprint

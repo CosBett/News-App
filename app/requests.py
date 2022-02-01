@@ -1,6 +1,3 @@
-from nis import cat
-from turtle import title
-from unicodedata import category
 import urllib.request, json
 from .models import Articles, Source, TopHeadlines 
 

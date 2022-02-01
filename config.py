@@ -17,7 +17,7 @@ class ProdConfig(config):
   args:
        Config: the parent configuration class with General configuration settings
   '''
-
+  pass
 
 class DevConfig(config):
   '''
@@ -28,7 +28,7 @@ class DevConfig(config):
 
   Debug = True
 
-  config_options = {
-    'development': DevConfig,
-    'production': ProdConfig,
-  }
+config_options = {
+'development':DevConfig,
+'production':ProdConfig
+}

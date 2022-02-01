@@ -1,10 +1,8 @@
 from flask import render_template,request,redirect, url_for
-import app
 from . import main
 from ..requests import get_articles, get_sources,get_topHeadlines
 
-
-@app.route('/')
+@main.route('/')
 def index():
 
     '''
