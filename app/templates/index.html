@@ -1,12 +1,18 @@
-{% extends 'base.html' %} {% import 'macros.html' as macro%}
+{% extends 'base.html' %} {% import 'macros.html' as macro %}{% import 'trendingColumn.html' as trending %}
 
-<!-- Content block -->
+<!-- Content block  -->
 {% block content %}
 
-<!-- News Sources -->
+<!-- News Sources  -->
 <h3> News Source </h3>
-<ul>
-  {{ macro.displayNewsSources(source_list)}}
-</ul>
+<div style="display: flex;">
+  <ul>
+    {{ macro.displayNewsSources(source_list)}}
+  </ul>
+  <ul>
+    {{ trending.displayNewsSources(top_headlines)}}
+  </ul>
+
+</div>
 
 {% endblock %}>

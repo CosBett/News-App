@@ -1,0 +1,4 @@
+{%macro displayNewsSources(top_headlines)%} {% for source in top_headlines%}
+<li><span>{{source.title}}</span> <span><a href="/source?name={{source.id}}">{{source.description}}</a></span></li>
+
+{% endfor %} {%endmacro%}

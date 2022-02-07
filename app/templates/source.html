@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% import 'sourceCard.html' as macro %}
+
+<!-- Content block  -->
+{% block content %}
+
+<!-- News Sources  -->
+<h3> News Source </h3>
+<ul>
+  {{ macro.displayNewsSources(source_list)}}
+</ul>
+
+{% endblock %}>

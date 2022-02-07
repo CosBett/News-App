@@ -28,7 +28,7 @@ class TopHeadlines:
   ''' 
   live top and breaking headlines for a country, specific category in a country, single source, or multiple sources
   '''  
-  def __init__(self, id, name, author, title, description, url, urlToImage,publishedAt, content ):
+  def __init__(self, id, name, author, title, description, url, urlToImage, publishedAt, content):
     self.id = id
     self.name = name
     self.author = author
