@@ -6,34 +6,36 @@
 {% block content %}
 
 <!-- News Sources  -->
-<div class="row container-fluid">
-  <div class="col-md-3">
-    <h2>News Sources</h2>
-    <div class="card shadow overflow-auto" style="height: 70vh;">
-      {{ macro.displayNewsSources(source_list)}}
-    </div>
-  </div>
-  <div class="col-md-6 ">
-    <h2>Top Headlines</h2>
-    <div class="overflow-auto " style="height: 70vh;">
-      <!-- <div class="col d-flex justify-content-between"> -->
-      <div class="col">
-        {{ trending.displayNewsSources(top_headlines)}}
+<div class="container-fluid">
+  <div class="row container-fluid bg-body">
+    <div class="col-md-3">
+      <h2 style="font-family: 'EB Garamond', serif; font-weight: bolder;">News Sources </h2>
+      <div class="card shadow overflow-auto" style="height: 65vh;">
+        {{ macro.displayNewsSources(source_list)}}
       </div>
     </div>
-  </div>
-  <div class="col-md-3 ">
-    <h2>Articles</h2>
-    <div class=" overflow-auto" style="height: 70vh;">
-      {% for article in articles %}
-      <div class="card shadow " style="border-radius: 8px; padding: 10px; ">
-        {{article.title}}
-        <span> <a href="/source?name={{articles.url}}"> Read more</a></span>
+    <div class="col-md-6 ">
+      <h2 style="font-family: 'EB Garamond', serif;font-weight: bolder;">Top Headlines</h2>
+      <div class="overflow-auto " style="height: 65vh;">
+        <!-- <div class="col d-flex justify-content-between"> -->
+        <div class="col">
+          {{ trending.displayNewsSources(top_headlines)}}
+        </div>
       </div>
-      {% endfor %}
+    </div>
+    <div class="col-md-3" style="font-family: 'EB Garamond', serif;">
+      <h2 style="font-weight: bolder;">Articles</h2>
+      <div class=" overflow-auto" style="height: 65vh;">
+        {% for article in articles %}
+        <div class="card shadow p-1" style="border-radius: 8px;">
+          <p> Source:<span style="font-style: italic; font-weight: bold;">{{article.source.name}}</p>
+          {{article.title}}
+          <span style="font-size: small;"><a href="{{article.url}}"> Read more</a></span>
+        </div>
+        {% endfor %}
+      </div>
     </div>
   </div>
 </div>
-
 {% endblock %}>
 <!-- self.author = author self.title = title self.description = description self.url = url self.urlToImage = urlToImage self.publishedAt = publishedAt self.content = co -->

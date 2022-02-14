@@ -9,7 +9,8 @@
   <!-- Bootstrap CSS/JS-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <!-- Font awesome CDN -->
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <!-- font awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Google font CDN -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,45 +19,47 @@
   <!-- Content block  -->
 </head>
 
-<body>
-  <div class="container bg-light">
+<body class="container">
+  <div class="container px-0 bg-light">
     <div> {% block navbar %} {% include 'navbar.html' %} {% endblock %} </div>
     <div class="div">
       {% block content %} {% endblock %}
     </div>
-    <div>
-      <footer class="footer mt-3 py-3 bg-body shadow-lg p-3">
-        <div class="row container-fluid g-0 shadow ifooter">
-          <hr>
-
-          <div class="col-md-4" id="improve-des">
-            <h4>Do you want to improve this page?</h4>
-            <p>*Edit the source code on <a href="https://github.com/CosBett/Uni-Quotes-App">Github</a>*</p>
-            <p>*Contribute on <a href="https://github.com/CosBett/Uni-Quotes-App">Github</a>*</p>
-            <p>*Report any issue here<a href="https://github.com/CosBett/Uni-Quotes-App">Github</a>*</p>
-          </div>
-          <div class="col-md-4">
-            <p id="signature">© Copyright 2021. All Rights Reserved (cosbett). </p>
-
-          </div>
-
-          <div class="col-md-3">
-            <h4>Get in touch</h4>
-            <div class="d-flex justify-content-around">
-              <a href="https://github.com/CosBett" target="_blank"><i class="fa fa-github-square"></i></a>
-              <a href="https://www.facebook.com/Cosmas.bett.mandellah" target="_blank"><i class="fa fa-facebook-square"></i></a>
-              <a href="https://www.linkedin.com/in/CosmasbettM" target="_blank"><i class="fa fa-linkedin"></i></a>
-            </div>
-
-          </div>
-          <div class="col-md-2 mb-2"></div>
+    <footer class="footer g-0 shadow-lg bg-light ">
+      <div class="row container px-0 g-0 shadow-lg ifooter">
+        <h5 class="d-flex justify-content-center">Contact us</h5>
+        <hr>
+        <!-- <div class="col-md-1"></div> -->
+        <div class="col-md-5" id="improve-des">
+          <h4>Do you want to improve this page?</h4>
+          <p>*Edit the source code on <a href="https://github.com/CosBett/News-App">Github</a>*</p>
+          <p>*Contribute on <a href="https://github.com/CosBett/News-App">Github</a>*</p>
+          <p>*Report any issue here<a href="https://github.com/CosBett/News-App">Github</a>*</p>
         </div>
-      </footer>
-    </div>
-    <!-- Boostrap Js links -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+        <div class="col-md-3 d-flex align-self-end">
+          <p id="signature" class=" d-flex justify-content-center">© Copyright 2021. All Rights Reserved (cosbett). </p>
+
+        </div>
+        <div class="col-md-4">
+          <h4>Get in touch</h4>
+          <div class="d-flex justify-content-around">
+            <a href="https://github.com/CosBett" target="_blank"><i class="fa fa-github-square"></i></a>
+            <a href="https://www.facebook.com/Cosmas.bett.mandellah" target="_blank"><i class="fa fa-facebook-square"></i></a>
+            <a href="https://www.linkedin.com/in/CosmasbettM" target="_blank"><i class="fa fa-linkedin"></i></a>
+            <a href="https://twitter.com/cmandellah" target="_blank"><i class="fa fa-twitter"></i>
+              </a>
+          </div>
+          <!-- <div class="col-md-1"></div> -->
+        </div>
+
+      </div>
+    </footer>
+
   </div>
+  <!-- Boostrap Js links -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

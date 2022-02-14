@@ -130,7 +130,7 @@ def process_articles_results(articles_results_list) :
   '''
   articles_results = []
   for articles_item in articles_results_list :
-
+    source = articles_item.get('source')
     author = articles_item.get('author')
     title = articles_item.get('title')
     description = articles_item.get('description')
@@ -139,7 +139,22 @@ def process_articles_results(articles_results_list) :
     publishedAt = articles_item.get('publishedAt')
     content = articles_item.get('content')
 
-    articles_object = Articles(author, title, description, url, urlToImage, publishedAt, content)
+    articles_object = Articles(source, author, title, description, url, urlToImage, publishedAt, content)
     articles_results.append(articles_object)
 
   return articles_results 
+
+def search_article(article):
+  search_article_url = 'https://newsapi.org/v2/search/everything?apiKey={}&query={}'.format(api_key,article)
+  with urllib.request.urlopen(search_article_url) as url:
+      search_article_data = url.read()
+      search_article_response = json.loads(search_article_data)
+
+      search_article_results = None
+
+      if search_article_response['results']:
+          search_article_list = search_article_response['results']
+          search_article_results = process_results(search_article_list)
+
+
+  return search_article_results
