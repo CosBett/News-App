@@ -1,7 +1,9 @@
 {%macro displayNewsSources(source_list)%} {% for source in source_list%}
 <div style="background-color: aliceblue;">
-  <h1>{{source.title}}</h1>
-  <p>{{source.description}}</p>
+  <div class="card">
+    <h1>{{source.title}}</h1>
+    <p>{{source.description}}</p>
+  </div>
 </div>
 
 {% endfor %} {%endmacro%}

@@ -4,15 +4,19 @@
 {% block content %}
 
 <!-- News Sources  -->
-<h3> News Source </h3>
-<div style="display: flex;">
-  <ul>
-    {{ macro.displayNewsSources(source_list)}}
-  </ul>
-  <ul>
-    {{ trending.displayNewsSources(top_headlines)}}
-  </ul>
-
+<div class="row container-fluid">
+  <div class="col-md-4">
+    <h2>News Sources</h2>
+    <div class="card shadow">
+      {{ macro.displayNewsSources(source_list)}}
+    </div>
+  </div>
+  <div class="col-md-8">
+    <h2>Top Headlines</h2>
+    <div class="card">
+      {{ trending.displayNewsSources(top_headlines)}}
+    </div>
+  </div>
 </div>
 
 {% endblock %}>
