@@ -1,20 +1,15 @@
 {%macro displayNewsSources(top_headlines)%} {% for source in top_headlines%}
 <!-- <span><a href="/source?name={{source.id}}">{{source.description}}</a></span></li> -->
-<div class="d-flex justify-content-space-between">
-  <div class="card shadow-lg p-2 mb-3 bg-body rounded" style="width: 20rem;">
-    <img src={{source.urlToImage}} class="card-img-top " style='width: 18rem;' alt="...">
-    <div class="card-body">
-      <h6 class="card-title">{{source.title}}</h6>
-      <p class="card-text" style="font-size: small;">{{source.description}}</p>
-    </div>
-    <!-- <ul class="list-group list-group-flush">
-      <li class="list-group-item" id="author" style="font-size: small;"> <span style=" font-weight: bold;">Authors: </span> <span>{{source.author}}</span></li>
-      <li class="list-group-item" id="author" style="font-size: small;"> <span style=" font-weight: bold;">published At: </span> <span>{{source.publishedAt}}</span></li>
-      <li class="list-group-item" id="author" style="font-size: small;"> <span style=" font-weight: bold;">Authors: </span> <span>{{source.author}}</span></li>
-    </ul> -->
-    <div class="card-body">
-      <a href="/source?name={{source.url}}">Read more...</a>
-    </div>
+<div class="card shadow-lg p-2 mb-3 bg-body rounded" style="width:100%;">
+  <img src={{source.urlToImage}} class="card-img-top " style='width: 100%;' alt="...">
+  <div class="card-body">
+    <h6 class="card-title">{{source.title}}</h6>
+    <p class="card-text" style="font-size: small;">{{source.description}}</p>
   </div>
+  <div class="card-footer">
+    <a href="/source?name={{source.url}}">Read more...</a>
+  </div>
+
 </div>
+
 {% endfor %} {%endmacro%}

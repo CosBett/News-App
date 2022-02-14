@@ -14,7 +14,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Creepster&family=Dongle:wght@400;700&family=EB+Garamond&display=swap" rel="stylesheet">
-
+  <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+  <!-- Content block  -->
 </head>
 
 <body>
@@ -22,6 +23,35 @@
     <div> {% block navbar %} {% include 'navbar.html' %} {% endblock %} </div>
     <div class="div">
       {% block content %} {% endblock %}
+    </div>
+    <div>
+      <footer class="footer mt-3 py-3 bg-body shadow-lg p-3">
+        <div class="row container-fluid g-0 shadow ifooter">
+          <hr>
+
+          <div class="col-md-4" id="improve-des">
+            <h4>Do you want to improve this page?</h4>
+            <p>*Edit the source code on <a href="https://github.com/CosBett/Uni-Quotes-App">Github</a>*</p>
+            <p>*Contribute on <a href="https://github.com/CosBett/Uni-Quotes-App">Github</a>*</p>
+            <p>*Report any issue here<a href="https://github.com/CosBett/Uni-Quotes-App">Github</a>*</p>
+          </div>
+          <div class="col-md-4">
+            <p id="signature">© Copyright 2021. All Rights Reserved (cosbett). </p>
+
+          </div>
+
+          <div class="col-md-3">
+            <h4>Get in touch</h4>
+            <div class="d-flex justify-content-around">
+              <a href="https://github.com/CosBett" target="_blank"><i class="fa fa-github-square"></i></a>
+              <a href="https://www.facebook.com/Cosmas.bett.mandellah" target="_blank"><i class="fa fa-facebook-square"></i></a>
+              <a href="https://www.linkedin.com/in/CosmasbettM" target="_blank"><i class="fa fa-linkedin"></i></a>
+            </div>
+
+          </div>
+          <div class="col-md-2 mb-2"></div>
+        </div>
+      </footer>
     </div>
     <!-- Boostrap Js links -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>

@@ -1,0 +1,36 @@
+.ifooter {
+  font-family: 'EB Garamond', serif;
+  position: fixed;
+  bottom: 0;
+}
+
+#improve-des {
+  font-size: 12px;
+  text-align: center;
+  line-height: 0.2;
+}
+
+h4 {
+  font-size: 16px;
+  text-align: center;
+  font-weight: 500;
+  color: #1148DC;
+  line-height: 0.4;
+}
+
+#signature {
+  font-size: 10px;
+  text-align: center;
+  line-height: 0.1;
+}
+
+.fa {
+  font-size: 35px;
+}
+
+
+/* font-family: 'Abril Fatface', cursive;
+color: #1148DC; 
+font-family: 'Abril Fatface', cursive;
+font-family: 'Dongle', sans-serif;
+font-family: 'EB Garamond', serif;*/
