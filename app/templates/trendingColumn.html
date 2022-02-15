@@ -6,9 +6,10 @@
     <h6 class="card-title">{{source.title}}</h6>
     <p class="card-text" style="font-size: small;">{{source.description}}</p>
   </div>
-  <div class="card-footer">
-    <a href="/source?name={{source.url}}">Read more...</a>
-  </div>
+  <span style="font-weight: bolder;font-size: small;">By: <em style="font-size:x-small;">{{source.author}}</em>&emsp;&emsp; Published At: <em style="font-size:x-small;">{{source.publishedAt}}</em></span>
+
+  <a href="/source?name={{source.url}}">Read more...</a>
+
 
 </div>
 
