@@ -31,12 +31,12 @@ def get_sources():
   '''
   print('pi-key', f'{base_url}{api_key}')
   get_sources_url = base_url.format(api_key)
-  # get_sources_url = f'{base_url}apiKey=64c05022cb0a4a558f0a9b2cc31fac1e'
+
   with urllib.request.urlopen(get_sources_url) as url:
        get_sources_data = url.read()
        get_sources_response = json.loads(get_sources_data)
-      #  print('results', get_sources_response['sources'])
-
+       print('results', get_sources_response)
+ 
        source_results = None
 
        if get_sources_response['status'] == 'ok':

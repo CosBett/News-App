@@ -9,10 +9,10 @@ class config:
   General configuration parent class
   '''
   NEWS_HEADLINES_URL = 'https://newsapi.org/v2/top-headlines?country=us&apiKey={}' 
+  SOURCE_HEADLINE_URL = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'
   NEWS_HIGHLIGHT_API_BASE_URL = 'https://newsapi.org/v2/sources?apikey={}'
   NEWS_EVERYTHING_URL = 'https://newsapi.org/v2/everything?q=trending&language=en&apiKey={}'
   NEWS_HIGHLIGHT_API_KEY = environ.get('API_KEY')
-  SOURCE_HEADLINE_URL = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'
 
 # https://newsapi.org/v2/top-headlines/sources?apiKey=API_KEY
 

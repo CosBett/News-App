@@ -3,7 +3,7 @@ import json
 from . import main
 from ..requests import get_articles, get_sources,get_topHeadlines, get_sourceHeadlines, search_article
 
-@main.route('/')
+@main.route('/index')
 def index():
   '''
   View root page function that returns the index page and its data
